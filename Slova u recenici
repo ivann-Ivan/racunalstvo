@@ -1,0 +1,99 @@
+#include <cstdlib>
+#include <iostream>
+
+
+using namespace std;
+
+int main() 
+{
+	
+	int x;
+	int y=0;
+	char R[] ={"Danas_si_lipa_kao_ruza."};
+	//char R[] ={"anavolimilovana"};
+	for (x=0; x<7; x++)
+	{
+		cout<<R[x];
+	}
+	cout<<endl;
+	cout<<endl;
+	
+	int duljinaP=sizeof(R);
+	char revR[duljinaP-1];
+	
+	for (x=duljinaP-2; x>=0; x--)
+	{
+		cout<<R[x];
+		revR[y]=R[x];
+		y++;
+	}
+	string palindrom="je";
+	for (x=0; R[x]!='\0'; x++)
+	{
+		
+		if (revR[x]!=R[x])
+		{
+			palindrom="nije";
+			
+			break;
+		}
+	}
+	cout<<endl;
+	cout<<"Niz "<<palindrom<<" palindrom."<<endl;
+
+	
+	cout<<endl;
+	cout<<endl;
+	
+	
+	int A=0;
+	string L="Ne postoji";
+	for (x=0; R[x]!='\0'; x++)
+	{
+	
+		if (R[x]=='A')
+		{
+			A=A+1;
+		
+		}
+		
+		if (R[x]=='L')
+		{
+			L="Postoji";
+		}
+	
+	}
+	cout<<"Ima "<<A<<" slovo/a A."<<endl;
+	cout<<L<<" slovo L."<<endl;
+	
+	int a=0;
+	int samoglasnici=0;
+	string l="Ne postoji";
+	for (x=0; R[x]!='\0'; x++)
+	{
+	
+		if (R[x]=='a')
+		{
+			a=a+1;
+		}
+		if (R[x]=='l')
+		{
+			l="Postoji";
+		}
+		if ((R[x]=='a')||(R[x]=='e')||(R[x]=='i')||(R[x]=='o')||(R[x]=='u')||(R[x]=='A')||(R[x]=='E')||(R[x]=='I')||(R[x]=='O')||(R[x]=='U'))
+		{
+			samoglasnici++;
+		}
+		if  (R[x]=='a')
+		{
+			R[x]='X';
+		}
+			
+	}
+	cout<<"Ima "<<a<<" slovo/a a."<<endl;
+	cout<<l<<" slovo l."<<endl;
+	cout<<"Duljina polja je: "<<x<<endl;
+	cout<<"U polju ima "<<samoglasnici<<" samoglasnika."<<endl;
+	cout <<"Nakon zamjene recenica glasi: "<<R<<endl;
+	return 0;
+}
